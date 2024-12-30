@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base Styles */
+        .container {
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .whatsapp-logo img {
+            width: 70px; /* Tamanho original da logo */
+            height: auto;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: auto;
+        }
+
+        .message h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .phone-number {
+            font-size: 18px;
+            color: gray;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #25D366; /* Cor padrão do WhatsApp */
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Logotipo do WhatsApp -->
+            <div class="whatsapp-logo">
+                <img src="https://static.whatsapp.net/rsrc.php/v3/y7/r/DSxOAUB0raA.png" alt="WhatsApp">
+            </div>
+            <!-- Imagem de Perfil -->
+            <div class="profile-picture">
+                <img src="logo-GP.jpg" alt="Perfil">
+            </div>
+            <!-- Mensagem e Número -->
+            <div class="message">
+                <h1>Continuar para WhatsApp</h1>
+                <div class="phone-number">+55 15 98130-9966</div>
+            </div>
+            <!-- Botão -->
+            <div class="button-container">
+                <button id="continueButton" class="btn btn-primary">Conversar com Guga Pinturas</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

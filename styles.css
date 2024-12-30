@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+    background-color: #f0f2f5;
+    color: #41525d;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 17px 50px 0 rgba(11,20,26,.19), 0 12px 15px 0 rgba(11,20,26,.24);
+    max-width: 500px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+.whatsapp-logo {
+    margin-bottom: 28px;
+}
+
+.whatsapp-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.message {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 36px;
+    margin-bottom: 16px;
+}
+
+.phone-number {
+    font-size: 16px;
+    line-height: 20px;
+    color: #8696a0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.btn {
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 24px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #008069;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #006e5c;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #008069;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 128, 105, 0.1);
+}
