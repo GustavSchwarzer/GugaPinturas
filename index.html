@@ -20,6 +20,7 @@
         --footer-text: #adb5bd;
         --star-gold: #FFD700; /* Cor dourada para as estrelas */
         --whatsapp-green: #25D366; /* Cor verde do WhatsApp */
+        --dark-green: #1a5e55; /* Um verde mais escuro para o hero */
     }
 
     * {
@@ -85,46 +86,66 @@
         font-size: 1.1em; /* Tamanho do ícone do WhatsApp */
     }
     
-    /* --- Header Styling (Adjusted for Navbar) --- */
-    header {
-      background-color: #000000; /* Fundo preto puro */
+    /* --- Hero Section Styling (The green section) --- */
+    .hero-section {
+      background-color: var(--dark-green); /* Cor verde mais escura */
       color: white;
-      padding: 120px 20px; /* Mantém o padding vertical */
+      padding: 80px 20px; /* Padding ajustado */
       text-align: center;
       position: relative;
       overflow: hidden;
-      margin-bottom: 40px; /* Adiciona espaço entre o header e o carrossel */
     }
 
-    header::before {
-      content: none; /* Remove a logo do fundo do header */
+    .hero-section .hero-logo {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 25px;
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3); /* Borda branca suave */
     }
 
-    header h1, header p {
-      position: relative;
-      z-index: 1;
-      background: none;
-      display: block;
-      margin: 0 auto;
-    }
-    header h1 {
+    .hero-section h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 44px;
+      font-size: 40px;
       color: #ffffff;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
       margin-bottom: 15px;
     }
-    header p {
-      margin-top: 0;
-      font-size: 20px;
+
+    .hero-section p {
+      font-size: 18px;
       color: #e0e0e0;
-      max-width: 600px;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
     }
+
+    .hero-section .hero-button {
+      background-color: var(--whatsapp-green);
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+    }
+
+    .hero-section .hero-button:hover {
+      background-color: #20b055;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+    }
+
 
     /* --- Services Carousel Styling --- */
     .services-carousel {
       max-width: 100%; /* Permite que o carrossel ocupe toda a largura */
-      margin: 0 auto 50px auto;
+      margin: 40px auto 50px auto; /* Adiciona margem superior para separar do hero */
       padding: 20px 0;
       overflow: hidden; /* Esconde o que está fora da área visível */
       position: relative; /* Necessário para a animação */
@@ -461,9 +482,22 @@
           font-size: 1em;
       }
 
-      header {
-        padding: 80px 20px;
-        margin-bottom: 30px;
+      .hero-section {
+        padding: 60px 20px;
+      }
+      .hero-section .hero-logo {
+        height: 100px;
+        width: 100px;
+      }
+      .hero-section h1 {
+        font-size: 32px;
+      }
+      .hero-section p {
+        font-size: 16px;
+      }
+      .hero-section .hero-button {
+        padding: 12px 25px;
+        font-size: 16px;
       }
 
       .services-carousel {
@@ -502,13 +536,6 @@
         font-size: 14px;
       }
 
-      header h1 {
-        font-size: 32px;
-        margin-bottom: 10px;
-      }
-      header p {
-        font-size: 16px;
-      }
       .container {
         padding: 0 20px;
         margin-top: 30px;
@@ -556,14 +583,21 @@
           font-size: 0.9em;
       }
       
-      header {
-        padding: 60px 15px;
-        margin-bottom: 25px;
+      .hero-section {
+        padding: 40px 15px;
       }
-      header h1 {
+      .hero-section .hero-logo {
+        height: 80px;
+        width: 80px;
+      }
+      .hero-section h1 {
         font-size: 28px;
       }
-      header p {
+      .hero-section p {
+        font-size: 14px;
+      }
+      .hero-section .hero-button {
+        padding: 10px 20px;
         font-size: 14px;
       }
 
@@ -635,10 +669,14 @@
     </a>
   </nav>
 
-  <header>
-    <h1>Diga adeus à dor de cabeça na sua obra!</h1>
-    <p>Tenha a **reforma dos seus sonhos** com **qualidade, agilidade e zero estresse**. Nós cuidamos de tudo, do início ao fim.</p>
-  </header>
+  <div class="hero-section">
+    <img src="https://lh3.googleusercontent.com/a-/ALV-UjX7rwpkw47nXRjV90QmISo7hVMvZwKaUPXQjOopp-ESwEzR4xU=s265-w265-h265" alt="Logo Guga Pinturas" class="hero-logo">
+    <h1>Soluções Profissionais em Obras e Reformas</h1>
+    <p>Atendimento para construtoras, incorporadoras e clientes exigentes de Sorocaba e região</p>
+    <a href="https://wa.me/SEUNUMERO?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20proposta%20t%C3%A9cnica." class="hero-button">
+      Solicitar proposta técnica
+    </a>
+  </div>
 
   <div class="services-carousel">
     <div class="carousel-track">
@@ -720,9 +758,9 @@
 
   <div class="container">
     <div class="section">
-      <h2>Transformamos seu espaço!</h2>
+      <h2>Diga adeus à dor de cabeça na sua obra!</h2>
       <p>
-        Na **Guga Pinturas e Reformas**, tornamos a sua obra uma experiência **tranquila e eficiente**. Realizamos **reformas completas**, desde a demolição e fundação até os acabamentos mais finos. Nossa equipe é especialista em **hidráulica, elétrica, alvenaria, revestimento e pintura**, garantindo um serviço de **excelência e sem surpresas**. Tenha a casa ou o escritório que você sempre quis, **sem dores de cabeça!**
+        Tenha a **reforma dos seus sonhos** com **qualidade, agilidade e zero estresse**. Nós cuidamos de tudo, do início ao fim.
       </p>
     </div>
   </div>
@@ -735,35 +773,35 @@
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
         <p>"Serviço impecável! A equipe da Guga superou minhas expectativas. **Pontualidade e qualidade do início ao fim.**"</p>
-        <span class="author">- Ana Paula S.</span>
+        <span class="author">- Ana Paula S. <br> <small>Jardim Abaeté, Sorocaba</small></span>
       </div>
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
         <p>"**Transformaram meu banheiro.** Ficou exatamente como eu queria, **sem nenhuma dor de cabeça.** Recomendo!"</p>
-        <span class="author">- Carlos D.</span>
+        <span class="author">- Carlos D. <br> <small>Parque Campolim, Sorocaba</small></span>
       </div>
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
         </div>
         <p>"Profissionais atenciosos e muito competentes. O apartamento ficou **lindo** após a reforma da pintura e piso."</p>
-        <span class="author">- Maria G.</span>
+        <span class="author">- Maria G. <br> <small>Centro, Votorantim</small></span>
       </div>
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
         <p>"A melhor escolha que fiz! **Preço justo, trabalho rápido e de alta qualidade.** Minha casa está renovada."</p>
-        <span class="author">- João P.</span>
+        <span class="author">- João P. <br> <small>Zona Leste, Sorocaba</small></span>
       </div>
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
         <p>"Equipe confiável e muito organizada. A reforma do meu escritório foi **concluída no prazo e sem imprevistos.**"</p>
-        <span class="author">- Fernanda L.</span>
+        <span class="author">- Fernanda L. <br> <small>Santa Rosália, Sorocaba</small></span>
       </div>
 
       <div class="testimonial-card">
@@ -771,71 +809,35 @@
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
         <p>"Serviço impecável! A equipe da Guga superou minhas expectativas. **Pontualidade e qualidade do início ao fim.**"</p>
-        <span class="author">- Ana Paula S.</span>
+        <span class="author">- Ana Paula S. <br> <small>Jardim Abaeté, Sorocaba</small></span>
       </div>
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
         <p>"**Transformaram meu banheiro.** Ficou exatamente como eu queria, **sem nenhuma dor de cabeça.** Recomendo!"</p>
-        <span class="author">- Carlos D.</span>
+        <span class="author">- Carlos D. <br> <small>Parque Campolim, Sorocaba</small></span>
       </div>
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
         </div>
         <p>"Profissionais atenciosos e muito competentes. O apartamento ficou **lindo** após a reforma da pintura e piso."</p>
-        <span class="author">- Maria G.</span>
+        <span class="author">- Maria G. <br> <small>Centro, Votorantim</small></span>
       </div>
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
         <p>"A melhor escolha que fiz! **Preço justo, trabalho rápido e de alta qualidade.** Minha casa está renovada."</p>
-        <span class="author">- João P.</span>
+        <span class="author">- João P. <br> <small>Zona Leste, Sorocaba</small></span>
       </div>
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
         <p>"Equipe confiável e muito organizada. A reforma do meu escritório foi **concluída no prazo e sem imprevistos.**"</p>
-        <span class="author">- Fernanda L.</span>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <p>"Serviço impecável! A equipe da Guga superou minhas expectativas. **Pontualidade e qualidade do início ao fim.**"</p>
-        <span class="author">- Ana Paula S.</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <p>"**Transformaram meu banheiro.** Ficou exatamente como eu queria, **sem nenhuma dor de cabeça.** Recomendo!"</p>
-        <span class="author">- Carlos D.</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-        </div>
-        <p>"Profissionais atenciosos e muito competentes. O apartamento ficou **lindo** após a reforma da pintura e piso."</p>
-        <span class="author">- Maria G.</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <p>"A melhor escolha que fiz! **Preço justo, trabalho rápido e de alta qualidade.** Minha casa está renovada."</p>
-        <span class="author">- João P.</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <p>"Equipe confiável e muito organizada. A reforma do meu escritório foi **concluída no prazo e sem imprevistos.**"</p>
-        <span class="author">- Fernanda L.</span>
+        <span class="author">- Fernanda L. <br> <small>Santa Rosália, Sorocaba</small></span>
       </div>
     </div>
   </div>
