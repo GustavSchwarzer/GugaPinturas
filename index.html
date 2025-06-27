@@ -6,6 +6,7 @@
   <meta name="description" content="Guga Pinturas oferece serviços de pintura premium, com acabamento perfeito e preços competitivos em Sorocaba e região." />
   <title>Guga Pinturas - Sua Obra com Excelência</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --preto: #000000;
@@ -60,10 +61,21 @@
       font-size: 1.2rem;
       color: var(--branco);
       letter-spacing: 1px; /* Espaçamento de letras */
+      font-family: 'Montserrat', sans-serif; /* Fonte Montserrat para navbar */
+      font-weight: 300; /* Risco mais fino */
+    }
+    /* Símbolo na Navbar - Ajuste de tamanho dos pontos */
+    .navbar-fixed .logo-mini .symbol {
+      gap: 0.3rem; /* Reduz o espaçamento entre os triângulos */
+    }
+    .navbar-fixed .logo-mini .symbol .triangle {
+      grid-template-columns: repeat(3, 3px); /* Pontos menores */
+      grid-template-rows: repeat(3, 3px); /* Pontos menores */
+      gap: 1px; /* Reduz o espaçamento entre os pontos */
     }
     .navbar-fixed .logo-mini .symbol .triangle .dot {
-        width: 10px; /* Pontos um pouco menores */
-        height: 10px;
+        width: 3px; /* Pontos menores */
+        height: 3px;
     }
     .navbar-fixed .btn-whatsapp-fixed {
       background-color: #25D366; /* Cor do WhatsApp */
@@ -137,6 +149,8 @@
       margin-bottom: 4px;
       text-transform: uppercase;
       letter-spacing: 2px;
+      font-family: 'Montserrat', sans-serif; /* Fonte Montserrat para o logo principal */
+      font-weight: 300; /* Peso mais fino */
     }
     .logo span {
       font-size: 1rem;
@@ -383,8 +397,14 @@
         <div class="triangle">
           <div class="dot blue"></div><div class="dot blue"></div><div class="dot blue"></div><div class="dot blue"></div><div class="dot blue"></div><div class="dot blue"></div>
         </div>
+        <div class="triangle">
+          <div class="dot red"></div><div class="dot red"></div><div class="dot red"></div><div class="dot red"></div><div class="dot red"></div><div class="dot red"></div>
+        </div>
+        <div class="triangle">
+          <div class="dot yellow"></div><div class="dot yellow"></div><div class="dot yellow"></div><div class="dot yellow"></div><div class="dot yellow"></div><div class="dot yellow"></div>
+        </div>
       </div>
-      <strong>GUGA PINTURAS</strong>
+      <strong>GUGA PINTURAS &amp; REFORMAS</strong>
     </div>
     <a href="https://wa.me/5515981309966?text=Olá!%20Vi%20seu%20Site%20e%20Gostaria%20de%20solicitar%20um%20orçamento." class="btn-whatsapp-fixed" target="_blank" rel="noopener noreferrer" aria-label="Falar via WhatsApp">
       WhatsApp
@@ -469,18 +489,13 @@
     </div>
     <div class="before-after" aria-label="Comparação antes e depois da pintura">
       <div>
-        <h3>Antes</h3>
-        <img src="https://via.placeholder.com/400x300?text=IMAGEM+ANTES" alt="Parede antes da pintura" loading="lazy" />
+        <img src="antes-depois.jpg" alt="Parede antes da pintura" loading="lazy" />
       </div>
-      <div>
-        <h3>Depois</h3>
-        <img src="https://via.placeholder.com/400x300?text=IMAGEM+DEPOIS" alt="Parede depois da pintura" loading="lazy" />
       </div>
-    </div>
 
     <div class="trust">
       <p>Empresas que confiam:</p>
-      <img src="https://via.placeholder.com/140x50?text=LOGO+EMPRESA" alt="Logo da Brio Incorporadora" loading="lazy" />
+      <img src="brio.jpg" alt="Logo da Brio Incorporadora" loading="lazy" />
     </div>
 
     <div id="form" class="form-section" aria-label="Formulário para solicitar orçamento">
