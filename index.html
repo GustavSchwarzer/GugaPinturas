@@ -14,6 +14,7 @@
       --vermelho: #FF5E5B;
       --amarelo: #FFCC4D;
       --cinza: #f3f3f3;
+      --transparente: rgba(0, 0, 0, 0); /* Adicionado para transparência total */
     }
     * {
       margin: 0;
@@ -26,6 +27,62 @@
       color: var(--branco);
       line-height: 1.6;
     }
+    /* Estilos da Navbar Flutuante - ATUALIZADO */
+    .navbar-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--transparente); /* Começa transparente */
+      padding: 0.8rem 1rem;
+      box-shadow: none; /* Sem sombra inicialmente */
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: translateY(-100%); /* Esconde a navbar inicialmente */
+      opacity: 0; /* Esconde a navbar inicialmente */
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transições mais suaves */
+    }
+    .navbar-fixed.show {
+      transform: translateY(0); /* Mostra a navbar */
+      opacity: 1; /* Mostra a navbar */
+      background-color: rgba(0, 0, 0, 0.9); /* Fundo semi-transparente ao aparecer */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra ao aparecer */
+    }
+    .navbar-fixed .logo-mini {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+    .navbar-fixed .logo-mini strong {
+      font-size: 1.2rem;
+      color: var(--branco);
+      letter-spacing: 1px; /* Espaçamento de letras */
+    }
+    .navbar-fixed .logo-mini .symbol .triangle .dot {
+        width: 10px; /* Pontos um pouco menores */
+        height: 10px;
+    }
+    .navbar-fixed .btn-whatsapp-fixed {
+      background-color: #25D366; /* Cor do WhatsApp */
+      color: var(--branco);
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;
+      transition: background-color 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra no botão */
+    }
+    .navbar-fixed .btn-whatsapp-fixed:hover,
+    .navbar-fixed .btn-whatsapp-fixed:focus {
+      background-color: #1DA851;
+      outline: none;
+    }
+
+
     header {
       padding: 2rem 1rem;
       display: flex;
@@ -35,9 +92,9 @@
       margin: auto;
       flex-wrap: wrap;
       /* Added for centering on smaller screens */
-      flex-direction: column; 
-      text-align: center; 
-      gap: 1rem; 
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
     }
     .logo {
       display: flex;
@@ -309,10 +366,30 @@
         width: 100%;
         max-width: 280px;
       }
+      .navbar-fixed .logo-mini strong {
+        font-size: 1rem;
+      }
+      .navbar-fixed .btn-whatsapp-fixed {
+        padding: 0.5rem 1rem;
+      }
     }
   </style>
 </head>
 <body>
+
+  <nav class="navbar-fixed" id="navbarFixed">
+    <div class="logo-mini" aria-label="Logo Guga Pinturas & Reformas">
+      <div class="symbol" aria-hidden="true">
+        <div class="triangle">
+          <div class="dot blue"></div><div class="dot blue"></div><div class="dot blue"></div><div class="dot blue"></div><div class="dot blue"></div><div class="dot blue"></div>
+        </div>
+      </div>
+      <strong>GUGA PINTURAS</strong>
+    </div>
+    <a href="https://wa.me/5515981309966?text=Olá!%20Vi%20seu%20Site%20e%20Gostaria%20de%20solicitar%20um%20orçamento." class="btn-whatsapp-fixed" target="_blank" rel="noopener noreferrer" aria-label="Falar via WhatsApp">
+      WhatsApp
+    </a>
+  </nav>
 
   <header>
     <div class="logo" aria-label="Logo Guga Pinturas & Reformas">
@@ -393,11 +470,17 @@
     <div class="before-after" aria-label="Comparação antes e depois da pintura">
       <div>
         <h3>Antes</h3>
-        <img src="antes-depois.jpg" alt="Parede antes da pintura" loading="lazy" />
+        <img src="https://via.placeholder.com/400x300?text=IMAGEM+ANTES" alt="Parede antes da pintura" loading="lazy" />
       </div>
-      <div class="trust">
+      <div>
+        <h3>Depois</h3>
+        <img src="https://via.placeholder.com/400x300?text=IMAGEM+DEPOIS" alt="Parede depois da pintura" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="trust">
       <p>Empresas que confiam:</p>
-      <img src="brio.jpg" alt="Logo da Brio Incorporadora" loading="lazy" />
+      <img src="https://via.placeholder.com/140x50?text=LOGO+EMPRESA" alt="Logo da Brio Incorporadora" loading="lazy" />
     </div>
 
     <div id="form" class="form-section" aria-label="Formulário para solicitar orçamento">
@@ -409,6 +492,10 @@
         <label for="email">Seu e-mail*</label>
         <input id="email" name="email" type="email" placeholder="Seu e-mail" required aria-required="true" />
 
+        <label for="phone">Seu telefone*</label>
+        <input id="phone" name="phone" type="tel" placeholder="Seu telefone com DDD (obrigatório)" required aria-required="true" />
+
+
         <label for="project">Descreva seu projeto</label>
         <textarea id="project" name="project" placeholder="Descreva seu projeto..."></textarea>
 
@@ -418,7 +505,7 @@
     </div>
 
     <div class="whatsapp">
-      <a href="https://wa.me/5515981309966?text=Olá!%20Vi%20seu%20Site%20e%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="Falar via WhatsApp">Falar via WhatsApp</a>
+      <a href="https://wa.me/5515981309966" target="_blank" rel="noopener noreferrer" aria-label="Falar via WhatsApp">Falar via WhatsApp</a>
     </div>
   </section>
 
@@ -429,25 +516,68 @@
 <script>
   const form = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
+  const navbarFixed = document.getElementById('navbarFixed');
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     const name = form.name.value.trim();
     const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
     const project = form.project.value.trim();
 
-    if (!name || !email) {
-      formMessage.textContent = 'Por favor, preencha os campos obrigatórios.';
+    if (!name || !email || !phone) { // Valida nome, e-mail e telefone
+      formMessage.textContent = 'Por favor, preencha todos os campos obrigatórios (Nome, E-mail e Telefone).';
       formMessage.style.display = 'block';
       return;
     }
 
-    const msg = `Olá! Gostaria de um orçamento. Nome: ${name} E-mail: ${email} Projeto: ${project || 'Não especificado.'}`;
-    const phone = '5515981309966'; // Substitua por seu número
-    const link = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    // Validação de e-mail básica
+    if (!email.includes('@') || !email.includes('.')) {
+      formMessage.textContent = 'Por favor, insira um e-mail válido.';
+      formMessage.style.display = 'block';
+      return;
+    }
+
+    // Validação de telefone (apenas números, 10 ou 11 dígitos para DDD + número)
+    if (!/^\d{10,11}$/.test(phone.replace(/\D/g, ''))) {
+        formMessage.textContent = 'Por favor, insira um número de telefone válido (apenas números, com DDD).';
+        formMessage.style.display = 'block';
+        return;
+    }
+
+
+    const msg = `Olá! Gostaria de um orçamento.
+Nome: ${name}
+E-mail: ${email}
+Telefone: ${phone}
+Projeto: ${project || 'Não especificado.'}`;
+
+    const whatsappNumber = '5515981309966'; // Substitua por seu número
+    const link = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
 
     window.open(link, '_blank');
+
+    // Feedback visual após o envio
+    formMessage.textContent = 'Sua mensagem foi enviada! Redirecionando para o WhatsApp...';
+    formMessage.style.color = '#25D366'; // Cor de sucesso do WhatsApp
+    formMessage.style.display = 'block';
+
+    // Limpa o formulário após um pequeno atraso para o usuário ver a mensagem
+    setTimeout(() => {
+        form.reset();
+        formMessage.style.display = 'none';
+        formMessage.style.color = 'var(--amarelo)'; // Volta a cor padrão
+    }, 3000);
+  });
+
+  // Script para a Navbar Flutuante
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { // Mostra a navbar após rolar 200px
+      navbarFixed.classList.add('show');
+    } else {
+      navbarFixed.classList.remove('show');
+    }
   });
 </script>
 
