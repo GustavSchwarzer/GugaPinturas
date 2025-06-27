@@ -34,6 +34,10 @@
       max-width: 1200px;
       margin: auto;
       flex-wrap: wrap;
+      /* Added for centering on smaller screens */
+      flex-direction: column; 
+      text-align: center; 
+      gap: 1rem; 
     }
     .logo {
       display: flex;
@@ -92,6 +96,10 @@
       cursor: pointer;
       transition: background 0.3s;
       white-space: nowrap;
+      /* Added for centering the button */
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
     .btn:hover,
     .btn:focus {
@@ -322,7 +330,7 @@
       <strong>GUGA PINTURAS &amp; REFORMAS</strong>
       <span>Nós somos a solução</span>
     </div>
-    <a href="https://wa.me/5515981309966?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." class="btn" target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento">Solicitar Orçamento</a>
+    <a href="https://wa.me/5515981309966?text=Olá!%20Vi%20seu%20Site%20e%20Gostaria%20de%20solicitar%20um%20orçamento." class="btn" target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento">Solicitar Orçamento</a>
 
   </header>
 
@@ -387,13 +395,7 @@
         <h3>Antes</h3>
         <img src="antes-depois.jpg" alt="Parede antes da pintura" loading="lazy" />
       </div>
-      <!-- <div>
-       
-        <img src="https://i.imgur.com/l9Nz6mB.jpg" alt="Parede depois da pintura" loading="lazy" />
-      </div>
-    </div> -->
-
-    <div class="trust">
+      <div class="trust">
       <p>Empresas que confiam:</p>
       <img src="brio.jpg" alt="Logo da Brio Incorporadora" loading="lazy" />
     </div>
@@ -416,7 +418,7 @@
     </div>
 
     <div class="whatsapp">
-      <a href="https://wa.me/5515981309966" target="_blank" rel="noopener noreferrer" aria-label="Falar via WhatsApp">Falar via WhatsApp</a>
+      <a href="https://wa.me/5515981309966?text=Olá!%20Vi%20seu%20Site%20e%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="Falar via WhatsApp">Falar via WhatsApp</a>
     </div>
   </section>
 
@@ -424,7 +426,7 @@
     © 2025 Guga Pinturas &amp; Reformas. Todos os direitos reservados.
   </footer>
 
- <script>
+<script>
   const form = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
 
@@ -441,7 +443,7 @@
       return;
     }
 
-    const msg = `Olá! Gostaria de um orçamento.%0A%0A*Nome:* ${name}%0A*E-mail:* ${email}%0A*Projeto:* ${project || 'Não especificado.'}`;
+    const msg = `Olá! Gostaria de um orçamento. Nome: ${name} E-mail: ${email} Projeto: ${project || 'Não especificado.'}`;
     const phone = '5515981309966'; // Substitua por seu número
     const link = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
 
